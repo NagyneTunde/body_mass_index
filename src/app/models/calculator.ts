@@ -15,8 +15,8 @@ export enum ErrorMessage {
 
 export enum ResultCategory {
   None = '',
-  Underweight = 'You are in category: Underweight',
-  Normal = 'You are in category: Normal weight',
-  Overweight = 'You are in category: Overweight',
-  Obese = 'You are in category: Obese',
+  Underweight = 'Category: Underweight',
+  Normal = 'Category: Normal weight',
+  Overweight = 'Category: Overweight',
+  Obese = 'Category: Obese',
 }

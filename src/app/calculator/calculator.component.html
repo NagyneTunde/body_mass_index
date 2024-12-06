@@ -1,20 +1,30 @@
-<h1>{{ title }}</h1>
-<p>{{ errorMessage }}</p>
-<label>Weight (kg)</label>
-<input [(ngModel)]="calcWeight" type="number" placeholder="weight" />
-<br />
-<label>Height (cm)</label>
-<input [(ngModel)]="calcHeight" type="number" placeholder="height" />
-<br />
-<button (click)="addNew()">Calculate</button>
+<div class="hero">
+  <div class="hero_content">
+    <h1 class="mb-2">{{ title }}</h1>
+    <div class="heroText d-flex flex-column justify-content-center">
+      <p>{{ errorMessage }}</p>
+      <label>Weight (kg)</label>
+      <input [(ngModel)]="calcWeight" type="number" placeholder="weight" />
+      <label>Height (cm)</label>
+      <input [(ngModel)]="calcHeight" type="number" placeholder="height" />
+      <button (click)="addNew()">Calculate</button>
 
-<ul>
-  <li *ngFor="let calc of calculator">
-    id: {{ calc.id }}, Weight: {{ calc.weight }} kg, Height:{{ calc.height }}
-    cm, Body mass index:
-    {{ calc.resultnumber }}, If you are a woman: {{ calc.resultcaregorywoman }},
-    If you are a man:
-    {{ calc.resultcategoryman }}
-    <button (click)="deleteCalculator(calc.id)">Delete</button>
-  </li>
-</ul>
+      <ul>
+        <li *ngFor="let calc of calculator">
+          <p>
+            <b> Weight:</b> {{ calc.weight }} kg, <b>Height:</b>
+            {{ calc.height }} cm, <b>Body mass index:</b>
+            {{ calc.resultnumber }},
+          </p>
+          <p>
+            <b>Woman:</b> {{ calc.resultcaregorywoman }}, <b>Man:</b>
+            {{ calc.resultcategoryman }}
+            <button class="delete" (click)="deleteCalculator(calc.id)">
+              Delete
+            </button>
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
