@@ -1,0 +1,20 @@
+<h1>{{ title }}</h1>
+<p>{{ errorMessage }}</p>
+<label>Weight (kg)</label>
+<input [(ngModel)]="calcWeight" type="number" placeholder="weight" />
+<br />
+<label>Height (cm)</label>
+<input [(ngModel)]="calcHeight" type="number" placeholder="height" />
+<br />
+<button (click)="addNew()">Calculate</button>
+
+<ul>
+  <li *ngFor="let calc of calculator">
+    id: {{ calc.id }}, Weight: {{ calc.weight }} kg, Height:{{ calc.height }}
+    cm, Body mass index:
+    {{ calc.resultnumber }}, If you are a woman: {{ calc.resultcaregorywoman }},
+    If you are a man:
+    {{ calc.resultcategoryman }}
+    <button (click)="deleteCalculator(calc.id)">Delete</button>
+  </li>
+</ul>
